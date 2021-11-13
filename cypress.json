@@ -1,0 +1,10 @@
+{
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 16000,
+  "pageLoadTimeout": 30000,
+  "testFiles": "**/*.feature",
+  "env": {
+    "url": "https://gamiroyal.com/"
+  },
+  "projectId": "5jo7gm"
+}
