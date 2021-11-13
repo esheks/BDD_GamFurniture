@@ -5,5 +5,5 @@
     "invalidemail":"ty",
     "message": "Fixtures are a great way to mock data for responses to routes",
     "expected": "This field is required.",
-    "expectInvalidEmail": "Please enter a valid email"
+    "expectInvalidEmail": "Please enter a valid email address."
 }
