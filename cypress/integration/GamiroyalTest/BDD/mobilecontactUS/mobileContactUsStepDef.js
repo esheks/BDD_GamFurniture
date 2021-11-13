@@ -26,23 +26,7 @@ When("Type phone number and email on the form", function(){
 And ("Click on submit button",function(){
     contactPage.elements.clickSubmit().click({force:true});//click submit
 })
-Then("Validate error message", function(){
-    contactPage.elements.errorName().should('have.text', this.data.expected)//assert texT
-})
-
-
-//Requires name in contact form
-Given('I open Contact us page', ()=>{
-    cy.url()
-})
-When("Type phone number and email on the form", function(){
-    contactPage.inputPhoneEmail(this.data.phone,this.data.email);//phone,email
-})
-
-And ("Click on submit button",function(){
-    contactPage.elements.clickSubmit().click({force:true});//click submit
-})
-Then("Validate first error message", function(){
+Then("Validate name error message", function(){
     contactPage.elements.errorName().should('have.text', this.data.expected)//assert texT
 })
 
@@ -58,7 +42,7 @@ When("Type name and email on the form", function(){
 And ("Click on submit button",function(){
     contactPage.elements.clickSubmit().click({force:true});//click submit
 })
-Then("Validate second error message", function(){
+Then("Validate phone error message", function(){
     contactPage.elements.errorPhone().should('have.text', this.data.expected)//assert text
 })
 
@@ -73,7 +57,7 @@ When("Type name and phone on the form", function(){
 And ("Click on submit button",function(){
     contactPage.elements.clickSubmit().click({force:true});//click submit
 })
-Then("Validate third error message", function(){
+Then("Validate email error message", function(){
     contactPage.elements.errorEmail().should('have.text', this.data.expected)//assert text
 })
 
@@ -88,7 +72,7 @@ When("Type name, phone and invalidemail on the form", function(){
 And ("Click on submit button",function(){
     contactPage.elements.clickSubmit().click({force:true});//click submit
 })
-Then("Validate fourth error message", function(){
+Then("Validate invalidemail error message", function(){
     contactPage.elements.errorEmail().should('have.text', this.data.expectInvalidEmail)//assert text
 })
 
@@ -96,7 +80,7 @@ Then("Validate fourth error message", function(){
 Given('I open Contact us page', ()=>{
     cy.url()
 })
-When("Type phone name, phone, email and message on the form", function(){
+When("Type name, phone, email and message on the form", function(){
     contactPage.inputInvalidEmail(this.data.name, this.data.phone, this.data.invalidemail);//name,phone,invalidemail
 })
 Then("Click on submit button", function(){
